@@ -56,6 +56,12 @@ form {
     }
 
 }
+
+.form-annotation {
+    margin-top: 1rem;
+    color: $c-gray-400;
+}
+
 @media (max-width: 800px) {
     form {
         grid-template-columns: 1fr;
