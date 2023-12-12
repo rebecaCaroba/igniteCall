@@ -1,8 +1,8 @@
-import banner from '../assets/banner.svg'
+import banner from '../../assets/banner.svg'
 import Image from 'next/image'
 import './style.scss'
-import { FaGoogle } from "react-icons/fa";
-
+// import { FaGoogle } from 'react-icons/fa'
+import { ClaimUsernameForm } from '@/components/ClaimUsernameForm'
 
 export default function Home() {
   return (
@@ -13,9 +13,7 @@ export default function Home() {
           Conecte seu calendário e permita que as pessoas marquem agendamentos
           no seu tempo livre.
         </p>
-        <button> 
-          <FaGoogle/>
-        Criar conta com Google</button>
+        <ClaimUsernameForm />
       </div>
       <Image
         src={banner}

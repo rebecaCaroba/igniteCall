@@ -6,15 +6,24 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    
+    &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 2px $c-green-500;
+    }
 }
 
 body {
     -webkit-font-smoothing: antiaLiased;
     background-color: $c-gray-900;
     color: $c-gray-100
+    
+    
 }
 
 body, input, textarea, button {
     font-size: 400;
     color: $c-gray-100
 }
+
+
