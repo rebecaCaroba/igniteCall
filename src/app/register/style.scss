@@ -21,7 +21,7 @@ form {
     display: flex;
     padding: 24px;
     flex-direction: column;
-    gap: 16px;
+    gap: 8px;
     align-self: stretch;
     border-radius: 8px;
 
@@ -44,5 +44,10 @@ form {
         border-radius: 6px;
         border: 0;
         cursor: pointer;
+    }
+
+    span {
+        font-size: $small;
+        color: $c-red-200;
     }
 }
