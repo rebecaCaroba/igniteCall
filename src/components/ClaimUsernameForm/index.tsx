@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form'
 import { FaCaretRight } from 'react-icons/fa'
 import { z } from 'zod'
 import '../../app/(home)/style.scss'
+import { useRouter } from 'next/navigation'
 
 const claimUsernameFormSchema = z.object({
   username: z
@@ -24,8 +25,12 @@ export function ClaimUsernameForm() {
     resolver: zodResolver(claimUsernameFormSchema),
   })
 
+  const router = useRouter()
+
   async function handlePreRegister(data: ClaimUsernameFormSchema) {
-    console.log(data.username)
+    const { username } = data
+
+    router.push(`/register?username=${username}`)
   }
 
   return (

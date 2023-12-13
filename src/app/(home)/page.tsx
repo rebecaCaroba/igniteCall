@@ -1,7 +1,6 @@
 import banner from '../../assets/banner.svg'
 import Image from 'next/image'
 import './style.scss'
-// import { FaGoogle } from 'react-icons/fa'
 import { ClaimUsernameForm } from '@/components/ClaimUsernameForm'
 
 export default function Home() {

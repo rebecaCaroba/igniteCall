@@ -4,7 +4,8 @@ import './style.scss'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
-
+import { useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
 const registerFormSchema = z.object({
   username: z
     .string()
@@ -20,6 +21,7 @@ export default function Register() {
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { isSubmitting, errors },
   } = useForm<RegisterFormSchema>({
     resolver: zodResolver(registerFormSchema),
@@ -28,6 +30,15 @@ export default function Register() {
   async function handleRegister(data: RegisterFormSchema) {
     console.log(data)
   }
+
+  const searchParams = useSearchParams()
+  const search = searchParams.get('username')
+
+  useEffect(() => {
+    if (search) {
+      setValue('username', search)
+    }
+  }, [search, setValue])
 
   return (
     <main>
