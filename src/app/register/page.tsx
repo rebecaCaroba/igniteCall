@@ -6,6 +6,7 @@ import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useEffect } from 'react'
 import { useSearchParams } from 'next/navigation'
+import { api } from '@/lib/axios'
 const registerFormSchema = z.object({
   username: z
     .string()
@@ -28,7 +29,14 @@ export default function Register() {
   })
 
   async function handleRegister(data: RegisterFormSchema) {
-    console.log(data)
+    try {
+      await api.post('/users', {
+        fullname: data.fullname,
+        username: data.username,
+      })
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   const searchParams = useSearchParams()
