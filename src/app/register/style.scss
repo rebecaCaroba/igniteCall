@@ -46,8 +46,24 @@ form {
         cursor: pointer;
     }
 
+    button:disabled {
+        cursor: not-allowed;
+        background: $c-gray-300;
+        color: $c-gray-100;
+    }
+
     span {
         font-size: $small;
         color: $c-red-200;
     }
+}
+
+.FormDiv {
+    padding: 16px 24px;
+    border-radius: 6px;
+    border: 1px solid $c-gray-600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
 }
